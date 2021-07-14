@@ -1,6 +1,6 @@
 {
   "name": "ecashaddrjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "eCash cashaddr address format support for Node.js and web browsers.",
   "main": "src/cashaddr.js",
   "files": [
@@ -14,7 +14,6 @@
     "pretest": "yarn lint",
     "test": "nyc --reporter=html --reporter=text mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "docs": "jsdoc -d docs src/cashaddr.js",
     "readme": "mustache package.json README.tpl.md > README.md"
   },
   "repository": {
