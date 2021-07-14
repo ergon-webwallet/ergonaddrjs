@@ -18,7 +18,7 @@ $ npm install --save ecashaddrjs
 
 ### Manually
 
-You may also download the distribution file manually and place it within your third-party scripts directory: [dist/cashaddrjs-1.0.5.min.js](https://unpkg.com/ecashaddrjs@1.0.5/dist/cashaddrjs-1.0.5.min.js).
+You may also download the distribution file manually and place it within your third-party scripts directory: [dist/cashaddrjs-1.0.6.min.js](https://unpkg.com/ecashaddrjs@1.0.6/dist/cashaddrjs-1.0.6.min.js).
 
 ## Usage
 
@@ -58,7 +58,7 @@ function convertBitcoincashToEcash(bitcoincashAddress) {
 ```html
 <html>
   <head>    
-    <script src="https://unpkg.com/ecashaddrjs@1.0.5/dist/cashaddrjs-1.0.5.min.js"></script>
+    <script src="https://unpkg.com/ecashaddrjs@1.0.6/dist/cashaddrjs-1.0.6.min.js"></script>
   </head>
   <body>
   <script>
@@ -89,7 +89,7 @@ You may include a script tag in your HTML and the `ecashaddr` module will be def
 <html>
   <head>
     ...
-    <script src="https://unpkg.com/ecashaddrjs@1.0.5/dist/cashaddrjs-1.0.5.min.js"></script>
+    <script src="https://unpkg.com/ecashaddrjs@1.0.6/dist/cashaddrjs-1.0.6.min.js"></script>
   </head>
   ...
 </html>
