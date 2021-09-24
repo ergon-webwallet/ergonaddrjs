@@ -1,7 +1,7 @@
 {
-  "name": "ecashaddrjs",
-  "version": "1.0.6",
-  "description": "eCash cashaddr address format support for Node.js and web browsers.",
+  "name": "ergonaddrjs",
+  "version": "1.0.0",
+  "description": "Ergon address format support for Node.js and web browsers.",
   "main": "src/cashaddr.js",
   "files": [
     "src/",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bytesofman/ecashaddrjs.git"
+    "url": "git+https://github.com/mr-zwets/ecashaddrjs.git"
   },
   "keywords": [
     "bitcoin",
@@ -32,9 +32,9 @@
   "author": "Emilio Almansi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bytesofman/ecashaddrjs/issues"
+    "url": "https://github.com/mr-zwets/ecashaddrjs/issues"
   },
-  "homepage": "https://github.com/bytesofman/ecashaddrjs#readme",
+  "homepage": "https://github.com/mr-zwets/ecashaddrjs#readme",
   "devDependencies": {
     "@babel/cli": "7.12.10",
     "@babel/core": "7.12.10",

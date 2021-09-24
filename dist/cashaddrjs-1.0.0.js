@@ -222,10 +222,10 @@ var ValidationError = validation.ValidationError;
  * @private
  */
 
-var VALID_PREFIXES = ['ecash', 'bitcoincash', 'simpleledger', 'etoken', 'bchtest', 'bchreg'];
+var VALID_PREFIXES = ['ergon', 'bitcoincash', 'simpleledger'];
 /**
  * Checks whether a string is a valid prefix; ie., it has a single letter case
- * and is one of 'bitcoincash', 'bchtest', or 'bchreg'.
+ * and is one of 'ergon', 'bitcoincash', or 'simpleledger'.
  *
  * @private
  * @param {string} prefix 

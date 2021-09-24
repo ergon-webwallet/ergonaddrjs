@@ -1,12 +1,12 @@
-# eCashAddr.js: The eCash address format for Node.js and web browsers.
+# ergonaddr.js: The Ergon address format for Node.js and web browsers.
 
 [![NPM](https://nodei.co/npm/ecashaddrjs.png?downloads=true)](https://nodei.co/npm/ecashaddrjs/)
 
-JavaScript implementation for CashAddr address format for eCash.
+JavaScript implementation for CashAddr address format for Ergon.
 
 Compliant with the original CashAddr [specification](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md) which improves upon [BIP 173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki).
 
-*Note:* This is a JavaScript implementation of the CashAddr format specification. If you are looking for a general purpose Bitcoin Cash address translation library, check out the easy-to-use and well-tested [BchAddr.js](https://github.com/ealmansi/bchaddrjs).
+_Note:_ This is a JavaScript implementation of the CashAddr format specification. If you are looking for a general purpose Bitcoin Cash address translation library, check out the easy-to-use and well-tested [BchAddr.js](https://github.com/ealmansi/bchaddrjs).
 
 ## Installation
 
@@ -22,61 +22,62 @@ You may also download the distribution file manually and place it within your th
 
 ## Usage
 
-Convert a `bitcoincash:` prefixed address to an `ecash:` prefixed address
+Convert a `bitcoincash:` prefixed address to an `ergon:` prefixed address
 
 ### In Node.js
 
 ```javascript
-const ecashaddr = require('ecashaddrjs');
-const bitcoincashAddress = 'bitcoincash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuj6vnmhp6'
+const ecashaddr = require("ecashaddrjs");
+const bitcoincashAddress =
+  "bitcoincash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuj6vnmhp6";
 const { prefix, type, hash } = ecashaddr.decode(bitcoincashAddress);
 console.log(prefix); // 'bitcoincash'
 console.log(type); // 'P2PKH'
 console.log(hash); // Uint8Array [ 118, 160, ..., 115 ]
-console.log(cashaddr.encode('ecash', type, hash)); 
-// 'ecash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuthccqd8d'
+console.log(cashaddr.encode("ecash", type, hash));
+// 'ergon:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmunpeyresh'
 ```
 
 ### React
-```javascript
-import cashaddr from 'ecashaddrjs';
 
-function convertBitcoincashToEcash(bitcoincashAddress) {    
+```javascript
+import cashaddr from "ecashaddrjs";
+
+function convertBitcoincashToEcash(bitcoincashAddress) {
   /* NOTE 
   This function assumes input parameter 'bitcoincashAddress' is a valid bitcoincash: address
   cashaddr.decode() will throw an error if 'bitcoincashAddress' lacks a prefix 
   */
-  const { prefix, type, hash,  } = cashaddr.decode(
-          bitcoincashAddress,
-      );
-  const ecashAddress = cashaddr.encode('ecash', type, hash);
+  const { prefix, type, hash } = cashaddr.decode(bitcoincashAddress);
+  const ecashAddress = cashaddr.encode("ecash", type, hash);
   return ecashAddress;
-}   
+}
 ```
 
 ### Browser
+
 ```html
 <html>
-  <head>    
+  <head>
     <script src="https://unpkg.com/ecashaddrjs@1.0.6/dist/cashaddrjs-1.0.6.min.js"></script>
   </head>
   <body>
-  <script>
-  function convertBitcoincashToEcash(bitcoincashAddress) {    
-    /* NOTE 
+    <script>
+      function convertBitcoincashToEcash(bitcoincashAddress) {
+        /* NOTE 
     This function assumes input parameter 'bitcoincashAddress' is a valid bitcoincash: address
     cashaddr.decode() will throw an error if 'bitcoincashAddress' lacks a prefix 
     */
-    const { prefix, type, hash,  } = cashaddr.decode(
-            bitcoincashAddress,
-        );
-    const ecashAddress = cashaddr.encode('ecash', type, hash);
-    return ecashAddress;
-  }
-  const eCashAddr = convertBitcoincashToEcash('bitcoincash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuj6vnmhp6')
-  console.log(eCashAddr)
-  // ecash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuthccqd8d
-  </script>
+        const { prefix, type, hash } = cashaddr.decode(bitcoincashAddress);
+        const ecashAddress = cashaddr.encode("ecash", type, hash);
+        return ecashAddress;
+      }
+      const eCashAddr = convertBitcoincashToEcash(
+        "bitcoincash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuj6vnmhp6"
+      );
+      console.log(eCashAddr);
+      // ecash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuthccqd8d
+    </script>
   </body>
 </html>
 ```
