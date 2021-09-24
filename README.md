@@ -1,6 +1,6 @@
 # ergonaddr.js: The Ergon address format for Node.js and web browsers.
 
-[![NPM](https://nodei.co/npm/ecashaddrjs.png?downloads=true)](https://nodei.co/npm/ecashaddrjs/)
+[![NPM](https://nodei.co/npm/ergonaddrjs.png)](https://nodei.co/npm/ergonaddrjs/)
 
 JavaScript implementation for CashAddr address format for Ergon.
 
@@ -13,12 +13,12 @@ _Note:_ This is a JavaScript implementation of the CashAddr format specification
 ### Using NPM
 
 ```bsh
-$ npm install --save ecashaddrjs
+$ npm install ergonaddrjs
 ```
 
 ### Manually
 
-You may also download the distribution file manually and place it within your third-party scripts directory: [dist/cashaddrjs-1.0.6.min.js](https://unpkg.com/ecashaddrjs@1.0.6/dist/cashaddrjs-1.0.6.min.js).
+You may also download the distribution file manually and place it within your third-party scripts directory: [dist/ergonaddrjs-1.0.0.min.js](https://unpkg.com/ergonaddrjs@1.0.0/dist/cashaddrjs-1.0.0.min.js).
 
 ## Usage
 
@@ -27,30 +27,30 @@ Convert a `bitcoincash:` prefixed address to an `ergon:` prefixed address
 ### In Node.js
 
 ```javascript
-const ecashaddr = require("ecashaddrjs");
+const ergonaddr = require("ergonaddrjs");
 const bitcoincashAddress =
   "bitcoincash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuj6vnmhp6";
-const { prefix, type, hash } = ecashaddr.decode(bitcoincashAddress);
+const { prefix, type, hash } = ergonaddr.decode(bitcoincashAddress);
 console.log(prefix); // 'bitcoincash'
 console.log(type); // 'P2PKH'
 console.log(hash); // Uint8Array [ 118, 160, ..., 115 ]
-console.log(cashaddr.encode("ecash", type, hash));
+console.log(cashaddr.encode("ergon", type, hash));
 // 'ergon:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmunpeyresh'
 ```
 
 ### React
 
 ```javascript
-import cashaddr from "ecashaddrjs";
+import cashaddr from "ergonaddrjs";
 
-function convertBitcoincashToEcash(bitcoincashAddress) {
+function convertBitcoincashToErgon(bitcoincashAddress) {
   /* NOTE 
   This function assumes input parameter 'bitcoincashAddress' is a valid bitcoincash: address
   cashaddr.decode() will throw an error if 'bitcoincashAddress' lacks a prefix 
   */
   const { prefix, type, hash } = cashaddr.decode(bitcoincashAddress);
-  const ecashAddress = cashaddr.encode("ecash", type, hash);
-  return ecashAddress;
+  const ergonAddress = cashaddr.encode("ergon", type, hash);
+  return ergonAddress;
 }
 ```
 
@@ -59,24 +59,24 @@ function convertBitcoincashToEcash(bitcoincashAddress) {
 ```html
 <html>
   <head>
-    <script src="https://unpkg.com/ecashaddrjs@1.0.6/dist/cashaddrjs-1.0.6.min.js"></script>
+    <script src="https://unpkg.com/ergonaddrjs@1.0.0/dist/cashaddrjs-1.0.0.min.js"></script>
   </head>
   <body>
     <script>
-      function convertBitcoincashToEcash(bitcoincashAddress) {
+      function convertBitcoincashToErgon(bitcoincashAddress) {
         /* NOTE 
     This function assumes input parameter 'bitcoincashAddress' is a valid bitcoincash: address
     cashaddr.decode() will throw an error if 'bitcoincashAddress' lacks a prefix 
     */
-        const { prefix, type, hash } = cashaddr.decode(bitcoincashAddress);
-        const ecashAddress = cashaddr.encode("ecash", type, hash);
-        return ecashAddress;
+        const { prefix, type, hash } = ergonaddr.decode(bitcoincashAddress);
+        const ergonAddress = ergonaddr.encode("ergon", type, hash);
+        return ergonAddress;
       }
-      const eCashAddr = convertBitcoincashToEcash(
+      const ergonAddress = convertBitcoincashToErgon(
         "bitcoincash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuj6vnmhp6"
       );
-      console.log(eCashAddr);
-      // ecash:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmuthccqd8d
+      console.log(ergonAddress);
+      // ergon:qpadrekpz6gjd8w0zfedmtqyld0r2j4qmunpeyresh
     </script>
   </body>
 </html>
@@ -84,13 +84,13 @@ function convertBitcoincashToEcash(bitcoincashAddress) {
 
 #### Script Tag
 
-You may include a script tag in your HTML and the `ecashaddr` module will be defined globally on subsequent scripts.
+You may include a script tag in your HTML and the `ergonaddr` module will be defined globally on subsequent scripts.
 
 ```html
 <html>
   <head>
     ...
-    <script src="https://unpkg.com/ecashaddrjs@1.0.6/dist/cashaddrjs-1.0.6.min.js"></script>
+    <script src="https://unpkg.com/ergonaddrjs@1.0.0/dist/cashaddrjs-1.0.0.min.js"></script>
   </head>
   ...
 </html>
