@@ -1,6 +1,6 @@
 {
   "name": "ergonaddrjs",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Ergon address format support for Node.js and web browsers.",
   "main": "src/cashaddr.js",
   "files": [
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/mr-zwets/ecashaddrjs#readme",
   "devDependencies": {
-    "@babel/cli": "7.12.10",
+    "@babel/cli": "^7.12.1",
     "@babel/core": "7.12.10",
     "@babel/preset-env": "7.12.11",
     "babel-loader": "8.2.2",
@@ -44,16 +44,17 @@
     "coveralls": "3.0.9",
     "debug": "4.3.1",
     "eslint": "6.2.2",
-    "jsdoc": "3.6.3",
-    "mocha": "8.2.1",
+    "jsdoc": "^3.6.11",
+    "mocha": "^8.4.0",
     "mustache": "3.0.1",
     "nyc": "15.0.0",
     "random-js": "1.0.8",
-    "shx": "0.3.3",
-    "webpack": "5.11.0",
+    "shx": "^0.3.3",
+    "webpack": "^5.99.8",
     "webpack-cli": "4.3.0"
   },
   "dependencies": {
-    "big-integer": "1.6.36"
+    "big-integer": "1.6.36",
+    "bs58check": "^4.0.0"
   }
 }
