@@ -3358,7 +3358,7 @@ npm-run-path@^4.0.0:
   dependencies:
     path-key "^3.0.0"
 
-nyc@15.0.0:
+nyc@^15.0.0:
   version "15.0.0"
   resolved "https://registry.npmjs.org/nyc/-/nyc-15.0.0.tgz"
   integrity sha512-qcLBlNCKMDVuKb7d1fpxjPR8sHeMVX0CHarXAVzrVWoFrigCkYR8xcrjfXSPi5HXM7EU78L6ywO7w1c5rZNCNg==

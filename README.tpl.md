@@ -1,10 +1,9 @@
-# CashAddr.js: The new Bitcoin Cash address format for Node.js and web browsers.
+# ErgonAddr.js: The Ergon address format for Node.js and web browsers.
 
-[![Build Status](https://travis-ci.org/ealmansi/cashaddrjs.svg?branch=master)](https://travis-ci.org/ealmansi/cashaddrjs) [![Coverage Status](https://coveralls.io/repos/github/ealmansi/cashaddrjs/badge.svg?branch=master)](https://coveralls.io/github/ealmansi/cashaddrjs?branch=master)
 
-[![NPM](https://nodei.co/npm/cashaddrjs.png?downloads=true)](https://nodei.co/npm/cashaddrjs/)
+[![NPM](https://nodei.co/npm/ergonaddrjs.png?downloads=true)](https://nodei.co/npm/ergonaddrjs/)
 
-JavaScript implementation for the new CashAddr address format for Bitcoin Cash.
+JavaScript implementation for the new CashAddr address format for Ergon
 
 Compliant with the original CashAddr [specification](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md) which improves upon [BIP 173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki).
 
@@ -15,13 +14,13 @@ Compliant with the original CashAddr [specification](https://github.com/bitcoinc
 ### Using NPM
 
 ```bsh
-$ npm install --save cashaddrjs
+$ npm install --save ergonaddrjs
 ```
 
 ### Using Bower
 
 ```bsh
-$ bower install --save cashaddrjs
+$ bower install --save ergonaddrjs
 ```
 
 ### Manually
@@ -33,13 +32,13 @@ You may also download the distribution file manually and place it within your th
 ### In Node.js
 
 ```javascript
-const cashaddr = require('cashaddrjs');
-const address = 'bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a';
+const cashaddr = require('ergonaddrjs');
+const address = 'ergon:qzlpe5s83jdjeptamv2wma058xq6pflukc6zwasrt7';
 const { prefix, type, hash } = cashaddr.decode(address);
-console.log(prefix); // 'bitcoincash'
+console.log(prefix); // 'ergon'
 console.log(type); // 'P2PKH'
 console.log(hash); // Uint8Array [ 118, 160, ..., 115 ]
-console.log(cashaddr.encode(prefix, type, hash)); // 'bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a'
+console.log(cashaddr.encode(prefix, type, hash)); // 'ergon:qzlpe5s83jdjeptamv2wma058xq6pflukc6zwasrt7'
 ```
 
 *Note:* This is a JavaScript implementation of the CashAddr format specification. If you are looking for an easy-to-use and well-tested library to translate between different formats, check out [BchAddr.js](https://github.com/ealmansi/bchaddrjs).
@@ -54,7 +53,7 @@ You may include a script tag in your HTML and the `cashaddr` module will be defi
 <html>
   <head>
     ...
-    <script src="https://unpkg.com/cashaddrjs@{{ version }}/dist/cashaddrjs-{{ version }}.min.js"></script>
+    <script src="https://unpkg.com/ergonaddrjs@{{ version }}/dist/ergonaddrjs-{{ version }}.min.js"></script>
   </head>
   ...
 </html>
