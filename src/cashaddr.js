@@ -14,7 +14,7 @@ var base32 = require('./base32');
 var bigInt = require('big-integer');
 var convertBits = require('./convertBits');
 var validation = require('./validation');
-import bs58check from 'bs58check'
+var bs58check = require('bs58check').default;
 var validate = validation.validate;
 
 /**

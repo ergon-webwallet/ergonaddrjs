@@ -1,6 +1,6 @@
 {
   "name": "ergonaddrjs",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Ergon address format support for Node.js and web browsers.",
   "main": "src/cashaddr.js",
   "files": [
