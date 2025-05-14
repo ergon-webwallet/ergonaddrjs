@@ -36,36 +36,41 @@ var validate = require('./validation').validate;
  * @param {bool} strictMode Require the conversion to be completed without padding.
  * @returns {Uint8Array}
  */
-module.exports = function(data, from, to, strictMode) {
-  var length = strictMode
-    ? Math.floor(data.length * from / to)
-    : Math.ceil(data.length * from / to);
-  var mask = (1 << to) - 1;
-  var result = new Uint8Array(length);
-  var index = 0;
-  var accumulator = 0;
-  var bits = 0;
-  for (var i = 0; i < data.length; ++i) {
-    var value = data[i];
-    validate(0 <= value && (value >> from) === 0, 'Invalid value: ' + value + '.');
-    accumulator = (accumulator << from) | value;
-    bits += from;
-    while (bits >= to) {
-      bits -= to;
-      result[index] = (accumulator >> bits) & mask;
-      ++index;
+module.exports = function (data, from, to, strictMode) {
+    var length = strictMode
+        ? Math.floor((data.length * from) / to)
+        : Math.ceil((data.length * from) / to);
+    var mask = (1 << to) - 1;
+    var result = new Uint8Array(length);
+    var index = 0;
+    var accumulator = 0;
+    var bits = 0;
+    for (var i = 0; i < data.length; ++i) {
+        var value = data[i];
+        validate(
+            0 <= value && value >> from === 0,
+            'Invalid value: ' + value + '.',
+        );
+        accumulator = (accumulator << from) | value;
+        bits += from;
+        while (bits >= to) {
+            bits -= to;
+            result[index] = (accumulator >> bits) & mask;
+            ++index;
+        }
     }
-  }
-  if (!strictMode) {
-    if (bits > 0) {
-      result[index] = (accumulator << (to - bits)) & mask;
-      ++index;
+    if (!strictMode) {
+        if (bits > 0) {
+            result[index] = (accumulator << (to - bits)) & mask;
+            ++index;
+        }
+    } else {
+        validate(
+            bits < from && ((accumulator << (to - bits)) & mask) === 0,
+            'Input cannot be converted to ' +
+                to +
+                ' bits without padding, but strict mode was used.',
+        );
     }
-  } else {
-    validate(
-      bits < from && ((accumulator << (to - bits)) & mask) === 0,
-      'Input cannot be converted to ' + to + ' bits without padding, but strict mode was used.'
-    );
-  }
-  return result;
+    return result;
 };

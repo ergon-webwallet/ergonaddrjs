@@ -1,7 +1,9 @@
 /**
  * @license
- * https://github.com/ealmansi/cashaddrjs
+ * https://github.com/ergon-webwallet/ergonaddrjs
  * Copyright (c) 2017-2020 Emilio Almansi
+ * Copyright (c) 2023 Bitcoin ABC
+ * Copyright (c) 2024-2025 Ergon.moe and calory.social
  * Distributed under the MIT software license, see the accompanying
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
@@ -21,10 +23,10 @@
  * @param {string} message Error description.
  */
 function ValidationError(message) {
-  var error = new Error();
-  this.name = error.name = 'ValidationError';
-  this.message = error.message = message;
-  this.stack = error.stack;
+    var error = new Error();
+    this.name = error.name = 'ValidationError';
+    this.message = error.message = message;
+    this.stack = error.stack;
 }
 
 ValidationError.prototype = Object.create(Error.prototype);
@@ -38,12 +40,12 @@ ValidationError.prototype = Object.create(Error.prototype);
  * @param {string} message Error message in case the condition does not hold.
  */
 function validate(condition, message) {
-  if (!condition) {
-    throw new ValidationError(message);
-  }
+    if (!condition) {
+        throw new ValidationError(message);
+    }
 }
 
 module.exports = {
-  ValidationError: ValidationError,
-  validate: validate,
+    ValidationError: ValidationError,
+    validate: validate,
 };
