@@ -25,7 +25,7 @@ $ bower install --save ergonaddrjs
 
 ### Manually
 
-You may also download the distribution file manually and place it within your third-party scripts directory: [dist/cashaddrjs-1.1.0.min.js](https://unpkg.com/cashaddrjs@1.1.0/dist/cashaddrjs-1.1.0.min.js).
+You may also download the distribution file manually and place it within your third-party scripts directory: [dist/cashaddrjs-1.1.1.min.js](https://unpkg.com/cashaddrjs@1.1.1/dist/cashaddrjs-1.1.1.min.js).
 
 ## Usage
 
@@ -53,7 +53,7 @@ You may include a script tag in your HTML and the `cashaddr` module will be defi
 <html>
   <head>
     ...
-    <script src="https://unpkg.com/ergonaddrjs@1.1.0/dist/ergonaddrjs-1.1.0.min.js"></script>
+    <script src="https://unpkg.com/ergonaddrjs@1.1.1/dist/ergonaddrjs-1.1.1.min.js"></script>
   </head>
   ...
 </html>
